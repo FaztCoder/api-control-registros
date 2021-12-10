@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\CursoController;
 use App\Http\Controllers\MuebleController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\InstrumentoController;
@@ -28,6 +29,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['cors']], function () {
     //Rutas a las que se permitirá acceso desde cualquier origen
 
+Route::get('/registros', [RegistroController::class, 'index']);
+Route::post('/registros', [RegistroController::class, 'store']);
+Route::get('/registros/{id}', [RegistroController::class, 'show']);
+Route::put('/registros/{id}', [RegistroController::class, 'update']);
+Route::delete('/registros/{id}', [RegistroController::class, 'destroy']);
+
 Route::get('/talleres', [TallerController::class, 'index']);
 Route::post('/talleres', [TallerController::class, 'store']);
 Route::get('/talleres/{id}', [TallerController::class, 'show']);
@@ -46,11 +53,11 @@ Route::get('/muebles/{id}', [MuebleController::class, 'show']);
 Route::put('/muebles/{id}', [MuebleController::class, 'update']);
 Route::delete('/muebles/{id}', [MuebleController::class, 'destroy']);
 
-Route::get('/registros', [RegistroController::class, 'index']);
-Route::post('/registros', [RegistroController::class, 'store']);
-Route::get('/registros/{id}', [RegistroController::class, 'show']);
-Route::put('/registros/{id}', [RegistroController::class, 'update']);
-Route::delete('/registros/{id}', [RegistroController::class, 'destroy']);
+Route::get('/cursos', [CursoController::class, 'index']);
+Route::post('/cursos', [CursoController::class, 'store']);
+Route::get('/cursos/{id}', [CursoController::class, 'show']);
+Route::put('/cursos/{id}', [CursoController::class, 'update']);
+Route::delete('/cursos/{id}', [CursoController::class, 'destroy']);
 
 Route::get('/alumnos', [AlumnoController::class, 'index']);
 Route::post('/alumnos', [AlumnoController::class, 'store']);

@@ -18,7 +18,7 @@ class Cors
     {
         return $next($request)
           //Url a la que se le dará acceso en las peticiones
-      ->header("Access-Control-Allow-Origin", "uzb4o9e2oe257glt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306")
+      ->header("Access-Control-Allow-Origin", "https://api-control-registros.herokuapp.com/:3306")
       //Métodos que a los que se da acceso
       ->header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
       //Headers de la petición

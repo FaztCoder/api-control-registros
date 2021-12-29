@@ -13,6 +13,6 @@ class Mueble extends Model
         'nombre',
         'descripcion',
         'cantidad',
-        'registro_id'
+        // 'registro_id'
     ];
 }

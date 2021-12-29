@@ -13,8 +13,7 @@ class Alumno extends Model
         'nombre',
         'apellidos',
         'edad',
-        'telefono',
-        'registro_id',
-        'taller_id'
+        'telefono_1',
+        'telefono_2'
     ];
 }

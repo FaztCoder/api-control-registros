@@ -14,7 +14,7 @@ class Taller extends Model
         'descripcion',
         'horario_inicio',
         'horario_fin',
-        'registro_id'
+        // 'registro_id'
     ];
 
     protected $table = 'talleres';

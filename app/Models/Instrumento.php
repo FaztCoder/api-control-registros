@@ -12,6 +12,6 @@ class Instrumento extends Model
     protected $fillable = [
         'nombre',
         'descripcion',
-        'registro_id'
+        // 'registro_id'
     ];
 }

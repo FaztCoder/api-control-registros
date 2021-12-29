@@ -46,7 +46,8 @@ class AlumnoController extends Controller
                 'nombre' => 'required | max:50',
                 'apellidos' => 'required | max:200',
                 'edad' => 'required | numeric',
-                'telefono' => 'required | numeric',
+                'telefono_1' => 'required | max:13',
+                'telefono_2' => 'required | max:13',
             ]);
             if($validateData){
                 return new AlumnoResource($alumno);

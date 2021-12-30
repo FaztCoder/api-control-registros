@@ -10,8 +10,8 @@ class Instrumento extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nombre',
-        'descripcion',
-        // 'registro_id'
+        'nombre_instrumento',
+        'marca',
+        'modelo',
     ];
 }

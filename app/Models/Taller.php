@@ -10,10 +10,10 @@ class Taller extends Model
     use HasFactory;
 
     protected $fillable  = [
-        'nombre',
+        'nombre_taller',
         'descripcion',
-        'horario_inicio',
-        'horario_fin',
+        'hora_inicio',
+        'hora_fin',
         // 'registro_id'
     ];
 

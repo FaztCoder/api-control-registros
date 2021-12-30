@@ -41,22 +41,18 @@ class AlumnoController extends Controller
     public function store(Request $request)
     {
         $alumno = Alumno::create($request->all());
-        if($alumno) {
-            $validateData = $request->validate([
-                'nombre' => 'required | max:50',
-                'apellidos' => 'required | max:200',
-                'edad' => 'required | numeric',
-                'telefono_1' => 'required | max:13',
-                'telefono_2' => 'required | max:13',
-            ]);
-            if($validateData){
-                return new AlumnoResource($alumno);
-            }else {
-                return response()->json([
-                    'message' => 'No se pudo registar el alumno',
-                    'data' => $alumno
-                ], 500);
-            }
+        if ($alumno) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Alumno registrado correctamente',
+                'data' => $alumno
+            ], 201);
+        }else {
+            return response()->json([
+                'error' => true,
+                'message' => 'No se pudo registrar el alumno',
+                'data' => $alumno
+            ], 500);
         }
     }
 
@@ -114,9 +110,15 @@ class AlumnoController extends Controller
         $alumno = Alumno::find($id);
         if ($alumno) {
             $alumno->delete();
-            return new AlumnoResource($alumno);
+            return response()->json([
+                'error' => false,
+                'message' => 'Alumno eliminado correctamente',
+                'data' => new AlumnoResource($alumno)
+            ], 200);
         }else{
-            return response()->json(['error' => 'No se encontro el alumno'], 404);
+            return response()->json(['error' => true,
+                'message' => 'No se pudo eliminar el alumno'
+        ], 404);
         }
     }
 }

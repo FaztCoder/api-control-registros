@@ -10,10 +10,13 @@ class Alumno extends Model
     use HasFactory;
 
     protected $fillable = [
+
         'nombre',
         'apellidos',
         'edad',
         'telefono_1',
         'telefono_2'
     ];
+    
+    public $timestamps = false;
 }

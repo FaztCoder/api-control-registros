@@ -20,11 +20,8 @@ class AlumnoResource extends JsonResource
             'nombre' => Str::lower($this->nombre),
             'apellidos' => mb_strtolower($this->apellidos, 'UTF-8'),
             'edad' => $this->edad,
-            'telefono' => $this->telefono,
-            'registro_id' => $this->registro_id,
-            'taller_id' => $this->taller_id,
-            'creeado_el' => $this->created_at->format('d/m/Y'),
-            'actualizado_el' => $this->updated_at->format('d/m/Y'),
+            'telefono_1' => $this->telefono_1,
+            'telefono_2' => $this->telefono_2,
         ];
     }
 
